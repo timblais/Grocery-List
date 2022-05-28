@@ -1,0 +1,25 @@
+{
+  "name": "grocery-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timblais/Grocery-List.git"
+  },
+  "author": "Tim Blais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timblais/Grocery-List/issues"
+  },
+  "homepage": "https://github.com/timblais/Grocery-List#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
