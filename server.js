@@ -8,7 +8,7 @@ const app = express();
 MongoClient.connect(`mongodb+srv://${process.env.mongoUser}:${process.env.mongoPassword}@cluster0.8baa0j1.mongodb.net/?retryWrites=true&w=majority`, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
-    const db = client.db('items')
+    const db = client.db('grocery-list')
     const itemCollection = db.collection('items')
 
     app.set('view engine', 'ejs')
@@ -22,10 +22,10 @@ MongoClient.connect(`mongodb+srv://${process.env.mongoUser}:${process.env.mongoP
     app.get('/', (req,res) => {
         db.collection('items').find().toArray()
         .then(results => {
-          console.log(results)
+            res.render('index.ejs', { items: results })
         })
         .catch(error => console.error(error))
-        res.render('index.ejs', { items: results })
+        
     })
 
     app.post('/items', (req,res) => {
