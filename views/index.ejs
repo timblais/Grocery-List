@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1>Grocery List</h1>
+
+    <form action="/items" method="POST">
+        <input type="text" placeholder="Add an item" name="item">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>My List</h2>
+    
+    <fieldset class="listItems">
+        <% for(let i = 0; i < items.length; i++) {%>
+            <div class="groceryItem">
+                <input type="checkbox" id="<%= items[i].item %>" name="<%= items[i].item %>">
+                <label for="<%= items[i].item %>"><%= items[i].item %></label>
+              </div>
+        <% } %>
+
+    </fieldset>
+</body>
+</html>
